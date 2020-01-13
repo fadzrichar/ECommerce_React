@@ -1,0 +1,27 @@
+.thumbnail-home {
+    transition: transform .2s; /* Animation */
+    margin: 0 auto;
+    transition: 0.3s;
+}
+
+body {
+    background-color: #d4f5f0;
+}
+
+.thumbnail-home:hover {
+    transform: scale(1.1);
+}
+.thumbnail-home img:hover{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.thumbnailHome h3 {
+    text-decoration: none;
+    transition: .2s;
+}
+
+@media(max-width:767px){
+    .thumbnail-home img {
+        margin-left: 15%;
+    }
+}
