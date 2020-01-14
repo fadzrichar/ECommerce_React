@@ -5,7 +5,7 @@ import Footer from '../components/footer';
 import { connect } from 'unistore/react';
 import { store, actions } from '../store';
 import '../styles/bootstrap.min.css';
-import { withRouter } from 'react-router-dom'
+import { withRouter, Link } from 'react-router-dom'
 
 
 class AllProducts extends Component {
@@ -74,8 +74,8 @@ class AllProducts extends Component {
               {/* <div className='col-md-9'> */}
               {displayAllProducts.map((data,key)=>(
                 <div className="col-md-3 content-allproducts">
-                <img src={data.url_photo1} style={{maxWidth:"100%", borderRadius:"20%", marginTop:"30px", marginBottom:"30px", width:"255px", height:"255px", objectFit:"cover"}} alt="imgproduct" />
-                <h5 style={{textAlign:"center", verticalAlign:"center", fontSize:"13px"}}>{data.product_name}</h5>
+                <Link to={`/product/${data.id}`}><img src={data.url_photo1} style={{maxWidth:"100%", borderRadius:"20%", marginTop:"30px", marginBottom:"30px", width:"255px", height:"255px", objectFit:"cover"}} alt="imgproduct" /></Link>
+                <Link to={`/product/${data.id}`}><h5 style={{textAlign:"center", verticalAlign:"center", fontSize:"13px"}}>{data.product_name}</h5></Link>
                 <h5 style={{textAlign:"center", verticalAlign:"center", fontSize:"13px"}}>Rp. {data.price}</h5>
                 </div>
               ))}

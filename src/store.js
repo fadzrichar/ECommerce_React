@@ -15,7 +15,8 @@ const initialState = {
     address:'',
     phone:'',
     allProducts:[],
-    id:''
+    id_product:'',
+    product_detail:{}
 };
 
 export const store = createStore(initialState);
@@ -63,5 +64,20 @@ export const actions = store => ({
         .catch(error => {
             return false
         })
-    }}
-)
+    },
+
+    getProductDetail : (state) =>{
+        const id_product = state.id_product
+        axios
+            .get("http://localhost:5000/products/list/"+id_product)
+            .then(function(response){
+            store.setState({ product_detail: response.data});
+
+            // handle success
+            // console.log(response.data);
+            })
+            .catch(function(error){
+                alert('invalid products')
+            });
+    }
+})
