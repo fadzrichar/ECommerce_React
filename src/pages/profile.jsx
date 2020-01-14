@@ -55,14 +55,14 @@ class Profile extends Component {
                           textAlign: "right",
                           marginTop: '50px'
                         }}>
-                        <img style={{ width:'100%', marginTop:'-36px' }} src={this.state.image} />
+                        <img style={{ width:'100%', marginTop:'-36px', borderRadius:'50%' }} src={this.state.image} />
                       </p>
                     </div>
                     <div className='col-md-6'>
                         <div className='col-md-12'>
                             <p className='name' style={{
                                 textAlign: 'left',
-                                marginTop: '190px'
+                                marginTop: '30px'
                               }}>
                               <label>{this.state.fullname}</label>
                             </p>

@@ -13,7 +13,8 @@ const initialState = {
     fullname:'',
     email:'',
     address:'',
-    phone:''
+    phone:'',
+    allProducts:[]
 };
 
 export const store = createStore(initialState);

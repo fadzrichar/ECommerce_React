@@ -8,6 +8,7 @@ import LogIn from '../pages/login';
 import NotFound from '../pages/notFound';
 import Profile from '../pages/profile';
 import Registration from '../pages/registration';
+import AllProducts from '../pages/allProducts'
 
 
 const MainRoute = () => {
@@ -20,6 +21,7 @@ const MainRoute = () => {
                     <Route exact path='/login' component={LogIn} />
                     <Route exact path='/profile' component={Profile} />
                     <Route exact path='/registration' component={Registration} />
+                    <Route exact path='/allproducts' component={AllProducts} />
                     <Route component={NotFound} />
                 </Switch>
             </BrowserRouter>
