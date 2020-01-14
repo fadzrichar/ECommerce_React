@@ -2,12 +2,10 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import Navigasi from '../components/navBars';
 import Footer from '../components/footer';
-import { Redirect } from "react-router-dom";
 import { connect } from 'unistore/react';
 import { store, actions } from '../store';
-import logo from '../images/hobindo.png';
 import '../styles/bootstrap.min.css';
-import { withRouter, Link } from 'react-router-dom'
+import { withRouter } from 'react-router-dom'
 
 
 class AllProducts extends Component {

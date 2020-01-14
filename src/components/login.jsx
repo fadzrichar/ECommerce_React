@@ -5,7 +5,7 @@ import '../styles/bootstrap.min.css';
 import logo from '../images/hobindo.png';
 import { withRouter, Link } from 'react-router-dom'
 import { connect } from 'unistore/react'
-import { store, actions } from '../store'
+import { actions } from '../store'
 
 class Login extends React.Component {
     handleLogin = () => {

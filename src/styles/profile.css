@@ -9,12 +9,11 @@
 } */
 
 .name {
-  font-size: 50px;
+  font-size: 30px;
   font-family: 'Ubuntu', Arial, Helvetica, sans-serif;
 }
 
 .email {
-  font-size: 15px;
   font-family: 'Ubuntu', Arial, Helvetica, sans-serif;
 }
 

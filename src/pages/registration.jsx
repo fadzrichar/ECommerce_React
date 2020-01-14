@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
-import axios from "axios";
-import { Redirect } from "react-router-dom";
 import { connect } from 'unistore/react';
-import { store, actions } from '../store';
+import { actions } from '../store';
 import logo from '../images/hobindo.png';
 import '../styles/bootstrap.min.css';
 import { withRouter, Link } from 'react-router-dom'

@@ -1,7 +1,7 @@
 import React from 'react';
 import '../styles/bootstrap.min.css';
 import '../styles/footer.css';
-import { Navbar, Nav } from 'react-bootstrap';
+import { Nav } from 'react-bootstrap';
 
 function Footer () {
     return (

@@ -14,7 +14,8 @@ const initialState = {
     email:'',
     address:'',
     phone:'',
-    allProducts:[]
+    allProducts:[],
+    id:''
 };
 
 export const store = createStore(initialState);
@@ -36,7 +37,7 @@ export const actions = store => ({
     },
 
     handleReg : async (state) => {
-        const self = this
+        // const self = this
         const req = {
             method: "post",
             url: "http://localhost:5000/users/registration",

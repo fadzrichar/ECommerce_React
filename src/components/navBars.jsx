@@ -4,7 +4,7 @@ import { Navbar, Nav } from 'react-bootstrap';
 
 import { withRouter, Link } from 'react-router-dom'
 import { connect } from 'unistore/react'
-import { store, actions } from '../store'
+import { actions } from '../store'
 
 import logo from '../images/hobindo.png'
 

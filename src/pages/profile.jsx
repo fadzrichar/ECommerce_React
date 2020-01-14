@@ -3,7 +3,7 @@ import axios from 'axios';
 import { Redirect } from "react-router-dom";
 import { withRouter } from 'react-router-dom';
 import { connect } from 'unistore/react';
-import { store, actions } from '../store';
+import { actions } from '../store';
 import Navigasi from '../components/navBars';
 import Footer from '../components/footer';
 import '../styles/profile.css'
@@ -55,7 +55,7 @@ class Profile extends Component {
                           textAlign: "right",
                           marginTop: '50px'
                         }}>
-                        <img style={{ width:'100%', marginTop:'-36px', borderRadius:'50%' }} src={this.state.image} />
+                        <img style={{ width:'100%', marginTop:'-36px', borderRadius:'50%' }} src={this.state.image} alt="imgprofile"/>
                       </p>
                     </div>
                     <div className='col-md-6'>
@@ -67,15 +67,31 @@ class Profile extends Component {
                               <label>{this.state.fullname}</label>
                             </p>
                         </div>
-                        {/* <div className='col-md-12'>
+                        <div className='col-md-12'>
                             <p className='email' style={{
                                 textAlign: 'left',
-                                marginTop: '40px',
-                                marginLeft: '7px'
+                                marginTop: '10px',
+                                marginLeft: '10px'
                               }}>
-                              <label></label> {email}
+                              <label>Email: {this.state.email}</label>
                             </p>
-                        </div> */}
+                        </div>
+                        <div className='col-md-12'>
+                            <p className='address' style={{
+                                textAlign: 'left',
+                                marginLeft: '10px'
+                              }}>
+                              <label>Address: {this.state.address}</label>
+                            </p>
+                        </div>
+                        <div className='col-md-12'>
+                            <p className='phone' style={{
+                                textAlign: 'left',
+                                marginLeft: '10px'
+                              }}>
+                              <label>Phone: {this.state.phone}</label>
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
