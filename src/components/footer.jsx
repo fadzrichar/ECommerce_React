@@ -1,9 +1,31 @@
-import React from 'react';
+import React, { Component } from 'react';
 import '../styles/bootstrap.min.css';
 import '../styles/footer.css';
-import { Nav } from 'react-bootstrap';
+import { withRouter, Link } from 'react-router-dom'
+import { connect } from 'unistore/react';
+import { store, actions } from '../store';
+import axios from 'axios';
 
-function Footer () {
+class Footer extends Component {
+    getSearchCategory = async (e) => {
+        // const keyword = state.search
+        const url = ("http://localhost:5000/products/search?p=1&keyword="+e)
+        await axios
+            .get(url)
+            .then(function(response) {
+                store.setState({ 
+                    searchCategory: response.data, 
+                    isLoading: false });
+                // handle success
+                console.log("cek isi response",response);
+            })
+            .catch(function(error) {
+                store.setState({ isLoading: false });
+                // handle error
+                console.log(error);
+            });
+    }
+    render() {
     return (
         <footer class="page-footer font-small stylish-color-dark pt-4">
         <div class="container text-center text-md-left">
@@ -16,13 +38,13 @@ function Footer () {
                 <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Category</h5>
                 <ul class="list-unstyled">
                 <li>
-                    <Nav.Link href="/allproducts">All Products</Nav.Link>
+                    <Link to="/allproducts" onClick={e =>this.getSearchCategory("")} >All Products</Link>
                 </li>
                 <li>
-                    <Nav.Link href="/allproducts">Gundam</Nav.Link>
+                    <Link to="/category/gundam" onClick={e =>this.getSearchCategory("gundam")} >Gundam</Link>
                 </li>
                 <li>
-                    <Nav.Link href="/allproducts">Digimon</Nav.Link>
+                    <Link to="/category/digimon" onClick={e =>this.getSearchCategory("digimon")} >Digimon</Link>
                 </li>
                 </ul>
             </div>
@@ -30,13 +52,13 @@ function Footer () {
                 <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Category</h5>
                 <ul class="list-unstyled">
                 <li>
-                    <Nav.Link href="/allproducts">Onepiece</Nav.Link>
+                    <Link to="/category/onepiece" onClick={e =>this.getSearchCategory("onepiece")} >Onepiece</Link>
                 </li>
                 <li>
-                    <Nav.Link href="/allproducts">Naruto</Nav.Link>
+                    <Link to="/category/naruto" onClick={e =>this.getSearchCategory("naruto")} >Naruto</Link>
                 </li>
                 <li>
-                    <Nav.Link href="/allproducts">NXEDGE</Nav.Link>
+                    <Link to="/category/nxedge" onClick={e =>this.getSearchCategory("nxedge")} >NXEDGE</Link>
                 </li>
                 </ul>
             </div>
@@ -48,5 +70,6 @@ function Footer () {
     </footer>
     )  
 }
-  
-  export default Footer;
+}
+
+export default connect("allProducts, keyword, search, category, searchCategory",actions)(withRouter(Footer));

@@ -10,6 +10,18 @@ import logo from '../images/hobindo.png'
 
 class Navigasi extends React.Component {
 
+	// function for displaying search result
+    handleSearchContent=(e)=>{
+        this.props.handleSearch(e)
+    }
+
+    searchCategory = async (event) => {
+        console.log("cek params", this.props)
+        const searchcategory = this.props.search;
+        await this.props.getSearchKeyword(searchcategory);
+        this.props.history.push("/searchproducts");
+    }
+
 	handleSignOut = () =>{
 		localStorage.setItem('is_login', false)
 		localStorage.removeItem('username')
@@ -22,6 +34,7 @@ class Navigasi extends React.Component {
 		const userName = localStorage.getItem('username')
 		return (
 			<header>
+				<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></link>
 				<div className="container">
 					<Navbar bg="light" expand="lg" fixed="top">
 					<div className="col-md-3">
@@ -34,10 +47,10 @@ class Navigasi extends React.Component {
 						/>
 						</Navbar.Brand>
 					</div>
-					<div className="col-md-6">
+					<div className="col-md-5">
 						<form onSubmit={e => e.preventDefault()} class="form-inline my-2 my-lg-0">
 							<input class="form-control mr-sm-2" 
-							style={{ width:"500px"}} 
+							style={{ width:"400px"}} 
 							type="search" 
 							placeholder="Search Your Hobby's Figure" 
 							aria-label="Search"
@@ -50,13 +63,14 @@ class Navigasi extends React.Component {
 							>Search</button>
 						</form>
 					</div>
-					<div className="col-md-3">
+					<div className="col-md-4">
 						<Navbar.Toggle aria-controls="basic-navbar-nav" />
 						<Navbar.Collapse id="basic-navbar-nav">
 							<Nav className="mr-auto">
 								<ul class="navbar-nav ml-lg-5">
 								{statusLogin ?
 									(<React.Fragment>
+									<Nav.Link href="/cart"><i className="fa fa-shopping-cart"></i></Nav.Link>
 									<Nav.Link href="/profile">Profile</Nav.Link>
 									<li class="nav-item">
 										<span className="nav-link" style={{color:"red"}}>Hello, {userName}</span>
@@ -64,6 +78,7 @@ class Navigasi extends React.Component {
 									<li class="nav-item">
 										<Link class="nav-link" style={{color:'#63707e'}} onClick={this.handleSignOut}>Logout</Link>
 									</li></React.Fragment>)
+									
 									:
 									(<React.Fragment>
 									<Nav.Link href="/login">Profile</Nav.Link>
@@ -83,6 +98,6 @@ class Navigasi extends React.Component {
 }
 
 export default connect(
-	"is_login, isLoading, search",
+	"is_login, isLoading, search, category, keyword",
 	actions
 )(withRouter(Navigasi));

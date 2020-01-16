@@ -15,28 +15,57 @@ const initialState = {
     address:'',
     phone:'',
     allProducts:[],
+    searchProducts:[],
+    searchCategory:[],
     id_product:'',
-    product_detail:{}
+    product_detail:{},
+    quantity:'',
+    listCart:[]
 };
 
 export const store = createStore(initialState);
 
 export const actions = store => ({
+    // handle change in search bar
     handleSearch : (state,e) => {
         let value = e.target.value;
         store.setState({ search :value, category:value});
         console.warn("cek store", store.getState())
     },
 
+    // define change input and state it in store list
     changeInput: (state, event) => {
         store.setState({[event.target.name]: event.target.value});
         console.log("cek input", event.target.name, event.target.value)
     },
 
+    // handle route category for dynamic category
     setCategory: (state, kategori) => {
         return {category : kategori}
     },
 
+    // Define for searching function with keyword
+    getSearchKeyword : async (state, e) => {
+        console.log('ini e', e)
+        const keyword = state.search
+        const url = ("http://localhost:5000/products/search?p=1&keyword="+keyword)
+        await axios
+            .get(url)
+            .then(function(response) {
+                store.setState({ 
+                    searchProducts: response.data, 
+                    isLoading: false });
+                // handle success
+                console.log("cek isi response",response);
+            })
+            .catch(function(error) {
+                store.setState({ isLoading: false });
+                // handle error
+                console.log(error);
+            });
+    },
+
+    // function for registration new user
     handleReg : async (state) => {
         // const self = this
         const req = {
@@ -66,6 +95,7 @@ export const actions = store => ({
         })
     },
 
+    // get product detail function
     getProductDetail : (state) =>{
         const id_product = state.id_product
         axios
@@ -79,5 +109,32 @@ export const actions = store => ({
             .catch(function(error){
                 alert('invalid products')
             });
+    },
+
+    // add to cart function
+    addCart : async(state) => {
+        const id_product = state.id_product
+        const req = {
+            method: "post",
+            url: "http://localhost:5000/carts",
+            headers: {
+              "Authorization" : "Bearer " + localStorage.getItem('token'),  
+              "Content-Type": "application/json"
+            },
+            data: {
+              "product_id": id_product,
+              "quantity": state.quantity
+            }
+        }
+        await axios(req)
+        .then(response => {
+            store.setState({
+                listCart:response.data
+            });
+            console.log("cek isi response",response);
+        })          
+        .catch(error => {
+            return false
+        })
     }
 })

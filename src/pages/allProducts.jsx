@@ -34,12 +34,12 @@ class AllProducts extends Component {
   };
   render() {
     const { allProducts } = this.props
-        const displayAllProducts = allProducts.filter(item => {
-            if (item.url_photo1 !== null && item.product_name !== null) {
-                return item;
-            }
-            return false
-        });
+      const displayAllProducts = allProducts.filter(item => {
+          if (item.url_photo1 !== null && item.product_name !== null) {
+              return item;
+          }
+          return false
+      });
     return (
       <div>
         <Navigasi />

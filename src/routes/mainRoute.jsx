@@ -10,6 +10,8 @@ import Profile from '../pages/profile';
 import Registration from '../pages/registration';
 import AllProducts from '../pages/allProducts';
 import ProductDetail from '../pages/productDetail';
+import Search from '../pages/search';
+import Category from '../pages/category';
 
 
 const MainRoute = () => {
@@ -24,6 +26,8 @@ const MainRoute = () => {
                     <Route exact path='/registration' component={Registration} />
                     <Route exact path='/allproducts' component={AllProducts} />
                     <Route exact path='/product/:id' component={ProductDetail} />
+                    <Route exact path='/searchproducts' component={Search} />
+                    <Route exact path="/category/:category" component={Category} />
                     <Route component={NotFound} />
                 </Switch>
             </BrowserRouter>
