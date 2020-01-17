@@ -48,40 +48,22 @@ class AllProducts extends Component {
             <div className='row slogan text-centre'>
               <h1 style={{textAlign:"center", verticalAlign:"center"}}>Your Hobby is Our Pleasure</h1>
             </div>
-            <div className='row content'>
-              {/* <div className='col-md-3 content-list-category'>
-                <ul className='list-unstyled'>
-                  <li className='active'>
-                    All Category
-                  </li>
-                  <li>
-                    Gundam
-                  </li>
-                  <li>
-                    Digimon
-                  </li>
-                  <li>
-                    Onepiece
-                  </li>
-                  <li>
-                    Naruto
-                  </li>
-                  <li>
-                    NXEDGE
-                  </li>
-                </ul>
-              </div> */}
-              {/* <div className='col-md-9'> */}
+            <div className='row justify-content-center'>
               {displayAllProducts.map((data,key)=>(
-                <div className="col-md-3 content-allproducts">
-                <Link to={`/product/${data.id}`}><img src={data.url_photo1} style={{maxWidth:"100%", borderRadius:"20%", marginTop:"30px", marginBottom:"30px", width:"255px", height:"255px", objectFit:"cover"}} alt="imgproduct" /></Link>
-                <Link to={`/product/${data.id}`}><h5 style={{textAlign:"center", verticalAlign:"center", fontSize:"13px"}}>{data.product_name}</h5></Link>
-                <h5 style={{textAlign:"center", verticalAlign:"center", fontSize:"13px"}}>Rp. {data.price}</h5>
+                <div className="col-md-3 content-allproducts justify-content-center">
+                  <div className='row justify-content-center'>  
+                    <Link to={`/product/${data.id}`}><img src={data.url_photo1} style={{maxWidth:"100%", borderRadius:"20%", marginTop:"30px", marginBottom:"30px", width:"255px", height:"255px", objectFit:"cover"}} alt="imgproduct" /></Link>
+                  </div>
+                  <div className='row justify-content-center'>
+                    <Link to={`/product/${data.id}`}><h5 style={{textAlign:"center", verticalAlign:"center", fontSize:"13px"}}>{data.product_name}</h5></Link>
+                  </div>
+                  <div className='row justify-content-center'>
+                    <h5 style={{textAlign:"center", verticalAlign:"center", fontSize:"13px"}}>Rp. {data.price}</h5>
+                  </div>
                 </div>
               ))}
               </div>
             </div>
-          {/* </div> */}
         </React.Fragment>
         <Footer/>
       </div>

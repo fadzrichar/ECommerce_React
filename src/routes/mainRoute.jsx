@@ -12,6 +12,7 @@ import AllProducts from '../pages/allProducts';
 import ProductDetail from '../pages/productDetail';
 import Search from '../pages/search';
 import Category from '../pages/category';
+import Cart from '../pages/cart';
 
 
 const MainRoute = () => {
@@ -28,6 +29,7 @@ const MainRoute = () => {
                     <Route exact path='/product/:id' component={ProductDetail} />
                     <Route exact path='/searchproducts' component={Search} />
                     <Route exact path="/category/:category" component={Category} />
+                    <Route exact path='/cart' component={Cart} />
                     <Route component={NotFound} />
                 </Switch>
             </BrowserRouter>

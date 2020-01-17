@@ -49,8 +49,7 @@ class Profile extends Component {
           <section className="content">
             <div className="container">
                 <div className="row profileBody-row">
-                    <div className="col-md-3"></div>
-                    <div className='col-md-3 profile-pic'>
+                    <div className='col-md-6 profile-pic'>
                       <p style={{
                           textAlign: "right",
                           marginTop: '50px'

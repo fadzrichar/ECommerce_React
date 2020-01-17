@@ -65,7 +65,8 @@ class ProductDetail extends Component {
               </div>
               <div style={{textAlign:"center", paddingTop:"10px"}}>
                 <select class="custom-select" name="quantity" onChange={e => this.props.changeInput(e)}>
-                  <option selected value="1">1</option>
+                  <option selected value="0">0</option>
+                  <option value="1">1</option>
                   <option value="2">2</option>
                   <option value="3">3</option>
                   <option value="4">4</option>
@@ -73,7 +74,7 @@ class ProductDetail extends Component {
               </div>
               <div style={{textAlign:"center", paddingTop:"10px"}}>
                 <Button variant="primary" type="submit" style={{marginBottom:"10px"}} onClick={this.props.addCart()}>
-                  <Link className="underlineHover" to="/cart">Add to Cart</Link>
+                  <Link className="underlineHover" to="/">Add to Cart</Link>
                 </Button>
               </div>
             </div>

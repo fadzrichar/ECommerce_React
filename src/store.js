@@ -20,7 +20,8 @@ const initialState = {
     id_product:'',
     product_detail:{},
     quantity:'',
-    listCart:[]
+    listCart:[],
+    listTransaction:[]
 };
 
 export const store = createStore(initialState);
@@ -131,7 +132,31 @@ export const actions = store => ({
             store.setState({
                 listCart:response.data
             });
-            console.log("cek isi response",response);
+            // alert("Cart successfully added");
+            console.log("cek isi response addCart",response);
+        })          
+        .catch(error => {
+            return false
+        })
+    },
+
+    // get cart function
+    getCart : async(state) => {
+        const req = {
+            method: "get",
+            url: "http://localhost:5000/carts",
+            headers: {
+              "Authorization" : "Bearer " + localStorage.getItem('token'),  
+              "Content-Type": "application/json"
+            }
+        }
+        await axios(req)
+        .then(response => {
+            store.setState({
+                listCart:response.data
+                // listTransaction:response.data.transaction_detail
+            });
+            console.log("cek isi response get cart",response);
         })          
         .catch(error => {
             return false
