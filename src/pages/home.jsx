@@ -10,17 +10,17 @@ import Footer from '../components/footer'
 
 class Home extends Component {
 
-      render() {
-          return (
-            <React.Fragment>
-                <Navigasi />
-                <Carousel />
-                <ThumbnailHome />
-                <Footer />
-            </React.Fragment>
-            )
-            };
-      }
+  render() {
+    return (
+      <React.Fragment>
+          <Navigasi />
+          <Carousel />
+          <ThumbnailHome />
+          <Footer />
+      </React.Fragment>
+      )
+    };
+  }
 
 export default connect(
 	"",

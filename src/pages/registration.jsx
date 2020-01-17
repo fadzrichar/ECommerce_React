@@ -6,6 +6,8 @@ import '../styles/bootstrap.min.css';
 import { withRouter, Link } from 'react-router-dom'
 
 class Registration extends Component {
+    
+    // function for back home cause didnt registration first
     doReg = async () => {
         await this.props.handleReg()
         console.warn('cek string', this.props.is_login)

@@ -7,7 +7,6 @@ import { connect } from 'unistore/react';
 import { store, actions } from '../store';
 
 class ProductDetail extends Component {
-
   componentDidMount = () =>{
     const produk_id = this.props.match.params.id
     store.setState({ id_product:produk_id });
@@ -15,12 +14,11 @@ class ProductDetail extends Component {
     this.props.getProductDetail()
   }
 
-
   render() {
     const detail_product=this.props.product_detail
     // console.log("isi detail produk",detail_product)
     return (
-        <React.Fragment>
+      <React.Fragment>
         <div className ="bodyCheckout">
         <Navigasi/>
         <div className="text-title text-center" style={{marginTop:'130px'}}>
@@ -82,7 +80,7 @@ class ProductDetail extends Component {
         </div>
         <Footer/>
       </div>
-      </React.Fragment>
+    </React.Fragment>
     )
   };
 }

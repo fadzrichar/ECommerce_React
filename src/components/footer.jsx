@@ -7,6 +7,7 @@ import { store, actions } from '../store';
 import axios from 'axios';
 
 class Footer extends Component {
+    // function for dynamic category
     getSearchCategory = async (e) => {
         // const keyword = state.search
         const url = ("http://localhost:5000/products/search?p=1&keyword="+e)
@@ -32,7 +33,7 @@ class Footer extends Component {
             <div class="row">
             <div class="col-md-4 mx-auto">
                 <h5 class="font-weight-bold text-uppercase mt-3 mb-4">About HOBINDO</h5>
-                <p>The best place for your hobbies.</p>
+                <p>The best place for your hobbies. Everyday we are adding real value through products and experiences. Lets enjoy our hobbies....</p>
             </div>
             <div class="col-md-3 mx-auto">
                 <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Category</h5>
@@ -61,15 +62,15 @@ class Footer extends Component {
                     <Link to="/category/nxedge" onClick={e =>this.getSearchCategory("nxedge")} >NXEDGE</Link>
                 </li>
                 </ul>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="footer-copyright text-center py-3">© 2020 Copyright:
-    <a href="/"> HOBINDO</a>
-    </div>
-    </footer>
-    )  
-}
+        <div class="footer-copyright text-center py-3">© 2020 Copyright:
+        <Link to="/"> HOBINDO</Link>
+        </div>
+        </footer>
+        )  
+    }
 }
 
 export default connect("allProducts, keyword, search, category, searchCategory",actions)(withRouter(Footer));

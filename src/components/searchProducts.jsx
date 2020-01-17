@@ -16,12 +16,12 @@ class SearchProducts extends Component {
                 <div>                    
                     <h1 style={{textAlign:"center", paddingTop: "150px"}}>Result for category  <strong>{this.props.search}</strong></h1>                     
                 </div>
-                <div className="row">
+                <div className="row justify-content-center">
                         {this.props.searchProducts.map((data,key)=>(
-                            <div className="col-md-3 search-products">
-                            <Link to={`/product/${data.id}`}><img src={data.url_photo1} style={{maxWidth:"100%", borderRadius:"20%", marginTop:"30px", marginBottom:"30px", width:"255px", height:"255px", objectFit:"cover"}} alt="imgproduct" /></Link>
-                            <Link to={`/product/${data.id}`}><h5 style={{textAlign:"center", verticalAlign:"center", fontSize:"13px"}}>{data.product_name}</h5></Link>
-                            <h5 style={{textAlign:"center", verticalAlign:"center", fontSize:"13px"}}>Rp. {data.price}</h5>
+                            <div className="col-md-3 content-allproducts search-products justify-content-center">
+                                <Link to={`/product/${data.id}`}><img src={data.url_photo1} style={{maxWidth:"100%", borderRadius:"20%", marginTop:"30px", marginBottom:"30px", width:"255px", height:"255px", objectFit:"cover"}} alt="imgproduct" /></Link>
+                                <Link to={`/product/${data.id}`}><h5 style={{textAlign:"center", verticalAlign:"center", fontSize:"13px"}}>{data.product_name}</h5></Link>
+                                <h5 style={{textAlign:"center", verticalAlign:"center", fontSize:"13px"}}>Rp. {data.price}</h5>
                             </div>
                         ))}
                 </div>

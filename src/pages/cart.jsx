@@ -5,11 +5,18 @@ import Footer from '../components/footer';
 import { connect } from 'unistore/react';
 import { actions } from '../store';
 // import { Button } from "react-bootstrap";
-import { withRouter } from 'react-router-dom'
+import { withRouter, Link } from 'react-router-dom';
+import { Button } from "react-bootstrap";
 
 class Cart extends Component {
   componentDidMount = () =>{
     this.props.getCart()
+  }
+  
+  // function for back to home page
+  backHome = () => {
+    alert('Thanks for purchasing in our store.');
+    this.props.history.push('/');
   }
 
   render() {
@@ -25,7 +32,7 @@ class Cart extends Component {
             {detail_cart.map((data,key)=>(
               <div classname="row justify-content-center">
               {data.transaction_detail.map((isi,key) => (
-                <img src={isi.product_id.url_photo1} style={{maxWidth:"100%", borderRadius:"50%", marginTop:"30px", width:"255px", height:"255px", objectFit:"cover", margin:"10px"}} alt="gambarcategory" />
+                <img src={isi.product_id.url_photo1} className="content-allproducts" style={{maxWidth:"100%", borderRadius:"50%", marginTop:"30px", width:"255px", height:"255px", objectFit:"cover", margin:"10px"}} alt="gambarcategory" />
               ))}
               </div>
             ))}
@@ -37,6 +44,11 @@ class Cart extends Component {
               <h5 style={{textAlign:"center", verticalAlign:"center", fontSize:"13px"}}>Your total item price: {data.cart.total_item_price}</h5>
               </div>
             ))}
+        </div>
+        <div style={{textAlign:"center", paddingTop:"10px"}}>
+          <Button variant="primary" type="submit" style={{marginBottom:"30px"}} onClick={event=> this.backHome(event)}>
+            <Link className="underlineHover">Purchasing</Link>
+          </Button>
         </div>
         <Footer/>
       </React.Fragment>

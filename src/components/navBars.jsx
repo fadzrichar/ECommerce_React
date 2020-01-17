@@ -15,6 +15,7 @@ class Navigasi extends React.Component {
         this.props.handleSearch(e)
     }
 
+	// function for searc navigation
     searchCategory = async (event) => {
         console.log("cek params", this.props)
         const searchcategory = this.props.search;
@@ -22,6 +23,7 @@ class Navigasi extends React.Component {
         this.props.history.push("/searchproducts");
     }
 
+	// function for signout method
 	handleSignOut = () =>{
 		localStorage.setItem('is_login', false)
 		localStorage.removeItem('username')
@@ -38,13 +40,13 @@ class Navigasi extends React.Component {
 				<div className="container">
 					<Navbar bg="light" expand="lg" fixed="top">
 					<div className="col-md-3">
-						<Navbar.Brand href="/"><img
+						<Navbar.Brand><Link to="/"><img
 							src={logo}
 							width="200px"
 							height="50px"
 							className="d-inline-block align-top"
 							alt="Hobindo logo"
-						/>
+						/></Link>
 						</Navbar.Brand>
 					</div>
 					<div className="col-md-5">
@@ -70,8 +72,12 @@ class Navigasi extends React.Component {
 								<ul class="navbar-nav ml-lg-5">
 								{statusLogin ?
 									(<React.Fragment>
-									<Nav.Link href="/cart"><i className="fa fa-shopping-cart"></i></Nav.Link>
-									<Nav.Link href="/profile">Profile</Nav.Link>
+									<Nav.Link>
+										<Link to="/cart"><i className="fa fa-shopping-cart"></i></Link>
+									</Nav.Link>
+									<Nav.Link>
+										<Link to="/profile">Profile</Link>
+									</Nav.Link>
 									<li class="nav-item">
 										<span className="nav-link" style={{color:"red"}}>Hello, {userName}</span>
 									</li>
@@ -81,9 +87,13 @@ class Navigasi extends React.Component {
 									
 									:
 									(<React.Fragment>
-									<Nav.Link href="/login">Profile</Nav.Link>
+									<Nav.Link>
+										<Link to="/login">Profile</Link>
+									</Nav.Link>
 									<li class="nav-item">
-									<Nav.Link href="/login">Login/Registrasi</Nav.Link>
+									<Nav.Link>
+										<Link to="login">Login/Registrasi</Link>
+									</Nav.Link>
 									</li></React.Fragment>)
 								}
 								</ul>

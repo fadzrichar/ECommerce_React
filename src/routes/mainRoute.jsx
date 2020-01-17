@@ -14,7 +14,6 @@ import Search from '../pages/search';
 import Category from '../pages/category';
 import Cart from '../pages/cart';
 
-
 const MainRoute = () => {
     return (
         <Provider store={store}>

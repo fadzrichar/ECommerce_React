@@ -54,7 +54,7 @@ class Profile extends Component {
                           textAlign: "right",
                           marginTop: '50px'
                         }}>
-                        <img style={{ width:'100%', marginTop:'-36px', borderRadius:'50%' }} src={this.state.image} alt="imgprofile"/>
+                        <img style={{ width:'50%', marginTop:'-36px', borderRadius:'50%' }} src={this.state.image} alt="imgprofile"/>
                       </p>
                     </div>
                     <div className='col-md-6'>

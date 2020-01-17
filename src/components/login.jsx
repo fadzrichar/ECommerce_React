@@ -8,6 +8,7 @@ import { connect } from 'unistore/react'
 import { actions } from '../store'
 
 class Login extends React.Component {
+    // function for endpoint login user
     handleLogin = () => {
         const self = this
         const req = {
@@ -43,7 +44,6 @@ class Login extends React.Component {
                 <div className="fadeIn first">
                 <img style={{ marginTop:'30px', marginBottom:'30px'}} src={logo} id="icon" alt="User Icon" />
                 </div>
-
                     {/* <!-- Login Form --> */}
                     <form onSubmit={e => e.preventDefault()}>
                         <input 
@@ -71,11 +71,10 @@ class Login extends React.Component {
 
                 {/* <!-- Remind Passowrd --> */}
                 <div id="formFooter">
-                <Link className="underlineHover" to="/">Back to Home</Link>
+                    <Link className="underlineHover" to="/">Back to Home</Link>
                 </div>
-
             </div>
-            </div>
+        </div>
         )
     }
 }
