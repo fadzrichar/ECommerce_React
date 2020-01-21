@@ -12,7 +12,7 @@ class AllProducts extends Component {
   componentDidMount = () => {
     const req = {
       method: 'get',
-      url: 'http://0.0.0.0:5000/products/search?keyword&p=1',
+      url: 'https://hobindo.site/products/search?p=1&keyword=',
       headers: {
         Authorization: 'Bearer ' + localStorage.getItem('token')
       },
@@ -29,7 +29,7 @@ class AllProducts extends Component {
         store.setState({ isLoading: false });
       });
   };
-  
+
   render() {
     const { allProducts } = this.props;
     const displayAllProducts = allProducts.filter(item => {

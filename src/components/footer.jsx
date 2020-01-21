@@ -10,7 +10,7 @@ class Footer extends Component {
   // function for dynamic category
   getSearchCategory = async e => {
     // const keyword = state.search
-    const url = 'https://hobindo.site//products/search?p=1&keyword=' + e;
+    const url = 'https://hobindo.site/products/search?p=1&keyword=' + e;
     await axios
       .get(url)
       .then(function(response) {
