@@ -57,7 +57,7 @@ export const actions = (store) => ({
   getSearchKeyword: async (state, e) => {
     console.log('ini e', e);
     const keyword = state.search;
-    const url = (`http://localhost:5000/products/search?p=1&keyword=${keyword}`);
+    const url = (`https://hobindo.site/products/search?p=1&keyword=${keyword}`);
     await axios
       .get(url)
       .then((response) => {
@@ -82,7 +82,7 @@ export const actions = (store) => ({
     // const self = this
     const req = {
       method: 'post',
-      url: 'http://localhost:5000/users/registration',
+      url: 'https://hobindo.site/users/registration',
       headers: {
         'Content-Type': 'application/json',
       },
@@ -111,7 +111,7 @@ export const actions = (store) => ({
       id_product
     } = state;
     axios
-      .get(`http://localhost:5000/products/list/${id_product}`)
+      .get(`https://hobindo.site/products/list/${id_product}`)
       .then((response) => {
         store.setState({
           product_detail: response.data
@@ -130,7 +130,7 @@ export const actions = (store) => ({
     } = state;
     const req = {
       method: 'post',
-      url: 'http://localhost:5000/carts',
+      url: 'https://hobindo.site/carts',
       headers: {
         Authorization: `Bearer ${localStorage.getItem('token')}`,
         'Content-Type': 'application/json',
@@ -155,7 +155,7 @@ export const actions = (store) => ({
   getCart: async (state) => {
     const req = {
       method: 'get',
-      url: 'http://localhost:5000/carts',
+      url: 'https://hobindo.site/carts',
       headers: {
         Authorization: `Bearer ${localStorage.getItem('token')}`,
         'Content-Type': 'application/json',

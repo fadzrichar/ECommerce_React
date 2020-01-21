@@ -13,7 +13,7 @@ class ThumbnailHome extends Component {
   // function for category dynamic
   getSearchCategory = async e => {
     // const keyword = state.search
-    const url = 'http://localhost:5000/products/search?p=1&keyword=' + e;
+    const url = 'https://hobindo.site/products/search?p=1&keyword=' + e;
     await axios
       .get(url)
       .then(function(response) {
