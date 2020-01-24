@@ -1,11 +1,6 @@
 import React from 'react';
 import '../styles/bootstrap.min.css';
 import '../styles/carousel.css';
-import slider1 from '../images/carousel1.jpg';
-import slider2 from '../images/carousel2.jpg';
-import slider3 from '../images/carousel3.jpg';
-import slider4 from '../images/carousel4.jpg';
-import slider5 from '../images/carousel5.jpg';
 
 class Carousel extends React.Component {
   render() {
