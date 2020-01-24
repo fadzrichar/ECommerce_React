@@ -27,7 +27,7 @@ class Carousel extends React.Component {
             <img className="d-block w-100" src="https://i.ytimg.com/vi/oJeATeU1mnI/maxresdefault.jpg" alt="Fourth slide" />
           </div>
           <div className="carousel-item">
-            <img className="d-block w-100" src="http://i.imgur.com/IyU4QZo.jpg" alt="Fifth slide" />
+            <img className="d-block w-100" src="https://www.eknightmedia.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/b/a/bas55159_07.jpg" alt="Fifth slide" />
           </div>
         </div>
         <a className="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">

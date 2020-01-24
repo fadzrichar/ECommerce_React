@@ -8,6 +8,7 @@ import { withRouter } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import { connect } from 'unistore/react';
 import { store, actions } from '../store';
+import { Row } from 'react-bootstrap';
 
 class ThumbnailHome extends Component {
   // function for category dynamic
@@ -34,7 +35,7 @@ class ThumbnailHome extends Component {
     return (
       <div className="container thumbnailHome">
         <div>
-          <h3 style={{ textAlign: 'center', marginTop: '30px' }}>Top List Cold Figure 2020</h3>
+          <h3 style={{ textAlign: 'center', marginTop: '30px' }}>Top List Hot Figure 2020</h3>
         </div>
         <div className="row">
           <div className="col-md-3 thumbnail-home" style={{ textAlign: 'center' }}>
@@ -54,13 +55,15 @@ class ThumbnailHome extends Component {
                 alt="gambarcategory"
               />
             </Link>
-            <Link
-              to="/category/gundam"
-              onClick={e => this.getSearchCategory('gundam')}
-              style={{ fontSize: '30px', paddingTop: '15px' }}
-            >
-              Gundam
-            </Link>
+            <Row>
+              <Link
+                to="/category/gundam"
+                onClick={e => this.getSearchCategory('gundam')}
+                style={{ fontSize: '30px', paddingTop: '15px' }}
+              >
+                Gundam
+              </Link>
+            </Row>
           </div>
           <div className="col-md-3 thumbnail-home" style={{ textAlign: 'center' }}>
             <Link to="/category/digimon" onClick={e => this.getSearchCategory('digimon')}>
@@ -79,13 +82,15 @@ class ThumbnailHome extends Component {
                 alt="gambarcategory"
               />
             </Link>
-            <Link
-              to="/category/digimon"
-              onClick={e => this.getSearchCategory('digimon')}
-              style={{ fontSize: '30px', paddingTop: '15px' }}
-            >
-              Digimon
-            </Link>
+            <Row>
+              <Link
+                to="/category/digimon"
+                onClick={e => this.getSearchCategory('digimon')}
+                style={{ fontSize: '30px', paddingTop: '15px' }}
+              >
+                Digimon
+              </Link>
+            </Row>
           </div>
           <div className="col-md-3 thumbnail-home" style={{ textAlign: 'center' }}>
             <Link to="/category/onepiece" onClick={e => this.getSearchCategory('onepiece')}>
@@ -104,13 +109,15 @@ class ThumbnailHome extends Component {
                 alt="gambarcategory"
               />
             </Link>
-            <Link
-              to="/category/onepiece"
-              onClick={e => this.getSearchCategory('onepiece')}
-              style={{ fontSize: '30px', paddingTop: '15px' }}
-            >
-              Onepiece
+            <Row>
+              <Link
+                to="/category/onepiece"
+                onClick={e => this.getSearchCategory('onepiece')}
+                style={{ fontSize: '30px', paddingTop: '15px' }}
+              >
+                Onepiece
             </Link>
+            </Row>
           </div>
           <div className="col-md-3 thumbnail-home" style={{ textAlign: 'center' }}>
             <Link to="/category/naruto" onClick={e => this.getSearchCategory('naruto')}>
@@ -127,13 +134,15 @@ class ThumbnailHome extends Component {
                 alt="gambarcategory"
               />
             </Link>
-            <Link
-              to="/category/naruto"
-              onClick={e => this.getSearchCategory('naruto')}
-              style={{ fontSize: '30px', paddingTop: '15px' }}
-            >
-              Naruto
+            <Row>
+              <Link
+                to="/category/naruto"
+                onClick={e => this.getSearchCategory('naruto')}
+                style={{ fontSize: '30px', paddingTop: '15px' }}
+              >
+                Naruto
             </Link>
+            </Row>
           </div>
         </div>
       </div>
