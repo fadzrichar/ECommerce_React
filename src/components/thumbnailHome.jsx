@@ -16,7 +16,7 @@ class ThumbnailHome extends Component {
     const url = 'https://hobindo.site/products/search?p=1&keyword=' + e;
     await axios
       .get(url)
-      .then(function(response) {
+      .then(function (response) {
         store.setState({
           searchCategory: response.data,
           isLoading: false
@@ -24,7 +24,7 @@ class ThumbnailHome extends Component {
         // handle success
         console.log('cek isi response', response);
       })
-      .catch(function(error) {
+      .catch(function (error) {
         store.setState({ isLoading: false });
         // handle error
         console.log(error);
@@ -34,7 +34,7 @@ class ThumbnailHome extends Component {
     return (
       <div className="container thumbnailHome">
         <div>
-          <h3 style={{ textAlign: 'center', marginTop: '30px' }}>Top List Hot Figure 2020</h3>
+          <h3 style={{ textAlign: 'center', marginTop: '30px' }}>Top List Cold Figure 2020</h3>
         </div>
         <div className="row">
           <div className="col-md-3 thumbnail-home" style={{ textAlign: 'center' }}>
