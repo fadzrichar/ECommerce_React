@@ -23,16 +23,16 @@ class Login extends React.Component {
       }
     };
     axios(req)
-      .then(function(response) {
+      .then(function (response) {
         if (response.data.hasOwnProperty('token')) {
           localStorage.setItem('username', self.props.username);
           localStorage.setItem('token', response.data.token);
-          localStorage.setItem('is_login', true);
+          localStorage.setItem('isLogin', true);
           self.props.history.push('/');
         }
         console.log('response data', response.data);
       })
-      .catch(function(error) {
+      .catch(function (error) {
         alert('invalid username or password');
       });
   };
@@ -81,4 +81,4 @@ class Login extends React.Component {
   }
 }
 
-export default connect('username, password, is_login', actions)(withRouter(Login));
+export default connect('username, password, isLogin', actions)(withRouter(Login));

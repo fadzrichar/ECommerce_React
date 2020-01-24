@@ -4,7 +4,7 @@ import axios from 'axios';
 // initial variable for variable in store
 const initialState = {
   isLoading: true,
-  is_login: false,
+  isLogin: false,
   category: '',
   search: '',
   username: '',
@@ -18,7 +18,7 @@ const initialState = {
   allProducts: [],
   searchProducts: [],
   searchCategory: [],
-  id_product: '',
+  idProduct: '',
   product_detail: {},
   quantity: '',
   listCart: [],
@@ -99,7 +99,7 @@ export const actions = (store) => ({
     await axios(req)
       .then((response) => {
         store.setState({
-          is_login: true,
+          isLogin: true,
         });
       })
       .catch((error) => false);
@@ -108,10 +108,10 @@ export const actions = (store) => ({
   // get product detail function
   getProductDetail: (state) => {
     const {
-      id_product
+      idProduct
     } = state;
     axios
-      .get(`https://hobindo.site/products/list/${id_product}`)
+      .get(`https://hobindo.site/products/list/${idProduct}`)
       .then((response) => {
         store.setState({
           product_detail: response.data
@@ -126,7 +126,7 @@ export const actions = (store) => ({
   // add to cart function
   addCart: async (state) => {
     const {
-      id_product
+      idProduct
     } = state;
     const req = {
       method: 'post',
@@ -136,7 +136,7 @@ export const actions = (store) => ({
         'Content-Type': 'application/json',
       },
       data: {
-        product_id: id_product,
+        product_id: idProduct,
         quantity: state.quantity,
       },
     };

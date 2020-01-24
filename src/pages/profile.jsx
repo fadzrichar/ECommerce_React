@@ -28,17 +28,17 @@ class Profile extends Component {
     };
     const self = this;
     axios(req)
-      .then(function(response) {
-        self.setState({ ...response.data }, () => {});
+      .then(function (response) {
+        self.setState({ ...response.data }, () => { });
         console.log('response data', response.data);
       })
-      .catch(function(error) {
+      .catch(function (error) {
         alert('error');
       });
   };
 
   render() {
-    const status_login = localStorage.getItem('is_login');
+    const status_login = localStorage.getItem('isLogin');
     console.log('status', status_login);
     if (status_login === false) {
       return <Redirect to={{ pathname: '/login' }} />;
@@ -127,4 +127,4 @@ class Profile extends Component {
   }
 }
 
-export default connect('is_login', actions)(withRouter(Profile));
+export default connect('isLogin', actions)(withRouter(Profile));
