@@ -5,6 +5,7 @@ import { Button } from "react-bootstrap";
 import { withRouter, Link } from 'react-router-dom'
 import { connect } from 'unistore/react';
 import { store, actions } from '../store';
+import '../styles/productDetail.css';
 
 class ProductDetail extends Component {
   componentDidMount = () => {
@@ -19,46 +20,41 @@ class ProductDetail extends Component {
     // console.log("isi detail produk",detail_product)
     return (
       <React.Fragment>
-        <div className="bodyCheckout">
-          <Navigasi />
-          <div className="text-title text-center" style={{ marginTop: '130px' }}>
+        <Navigasi />
+        <div className="container boxDetail">
+          <div className="text-title text-center" style={{ marginTop: '30px' }}>
             <h3>{detail_product.product_name}</h3>
           </div>
           <div className="container justify-content" style={{ border: "1px solid white", marginTop: "30px", borderRadius: "5%", padding: '15px 15px 15px 15px' }}>
             <div className="row">
               <div className="col-md-6" style={{ textAlign: "center" }}>
                 <div className="row">
-                  <div className="col-md-12" style={{ textAlign: "center", width: "100%", height: "500px" }}>
-                    <img style={{ width: "480px", height: "460px", borderRadius: "10px" }} src={detail_product.url_photo1} className="fotoBarang" alt="" />
+                  <div className="col-md-12" style={{ textAlign: "center", width: "100%", height: "350px" }}>
+                    <img style={{ width: "380px", height: "320px", borderRadius: "10px" }} src={detail_product.url_photo1} className="fotoBarang" alt="" />
                   </div>
                   <div className="col-md-12" style={{ display: 'flex' }}>
-                    <div className="col-md-4">
-                      <img style={{ borderRadius: "10px", width: "160px", height: "230px" }} src={detail_product.url_photo2} className="fotoBarang" alt="" /></div>
-                    <div className="col-md-4">
-                      <img style={{ borderRadius: "10px", width: "160px", height: "230px" }} src={detail_product.url_photo3} className="fotoBarang" alt="" /></div>
-                    <div className="col-md-4">
-                      <img style={{ borderRadius: "10px", width: "160px", height: "230px" }} src={detail_product.url_photo4} className="fotoBarang" alt="" /></div>
+                    <div className="col-md-6">
+                      <img style={{ borderRadius: "10px", width: "160px", height: "160px" }} src={detail_product.url_photo2} className="fotoBarang" alt="" /></div>
+                    <div className="col-md-6">
+                      <img style={{ borderRadius: "10px", width: "160px", height: "160px" }} src={detail_product.url_photo3} className="fotoBarang" alt="" /></div>
                   </div>
                 </div>
               </div>
               <div className="col-md-6">
-                <div>
-                  <h3>Deskripsi</h3>
+                <div style={{ margin: '30px' }}>
+                  <h3 style={{ textAlign: "center" }}><strong>Deskripsi</strong></h3>
                 </div>
-                <div>
+                <div style={{ margin: '10px' }}>
                   <span>{detail_product.description}</span>
                 </div>
                 <br />
-                {/* <div>
-                <h6>Stock: {detail_product.stock}</h6>
-              </div> */}
-                <div>
+                <div style={{ margin: '10px' }}>
                   <h6>Weight: {detail_product.weight} kg</h6>
                 </div>
-                <div>
+                <div style={{ margin: '10px' }}>
                   <h6>Category: {detail_product.category}</h6>
-                </div>
-                <div>
+                </div >
+                <div style={{ margin: '10px' }}>
                   <h4>Rp {detail_product.price}</h4>
                 </div>
                 <div style={{ textAlign: "center", paddingTop: "10px" }}>
@@ -78,8 +74,8 @@ class ProductDetail extends Component {
               </div>
             </div>
           </div>
-          <Footer />
         </div>
+        <Footer />
       </React.Fragment>
     )
   };

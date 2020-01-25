@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { withRouter } from "react-router-dom";
+import { withRouter, Redirect } from "react-router-dom";
 import { connect } from "unistore/react";
 import { actions } from "../store";
 
@@ -11,16 +11,22 @@ import Footer from '../components/footer'
 class Home extends Component {
 
   render() {
-    return (
-      <React.Fragment>
-          <Navigasi />
-          <Carousel />
-          <ThumbnailHome />
-          <Footer />
-      </React.Fragment>
-      )
-    };
+    const status_login = localStorage.getItem('isLogin');
+    console.log('status', status_login);
+    if (status_login === false) {
+      return <Redirect to={{ pathname: '/login' }} />;
+    } else {
+      return (
+        <React.Fragment>
+            <Navigasi />
+            <Carousel />
+            <ThumbnailHome />
+            <Footer />
+        </React.Fragment>
+        )
+      };
   }
+}
 
 export default connect(
 	"",

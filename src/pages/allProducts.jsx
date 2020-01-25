@@ -20,12 +20,12 @@ class AllProducts extends Component {
     };
     console.log(req);
     axios(req)
-      .then(function(response) {
+      .then(function (response) {
         store.setState({ allProducts: response.data, isLoading: false });
         console.log(response.data);
         return response;
       })
-      .catch(function(error) {
+      .catch(function (error) {
         store.setState({ isLoading: false });
       });
   };
@@ -42,8 +42,8 @@ class AllProducts extends Component {
       <div>
         <Navigasi />
         <React.Fragment>
-          <div className="container" style={{ marginTop: '100px' }}>
-            <div className="row slogan text-centre">
+          <div className="container slogan" style={{ marginTop: '100px' }}>
+            <div className="row text-centre">
               <h1 style={{ textAlign: 'center', verticalAlign: 'center' }}>Your Hobby is Our Pleasure</h1>
             </div>
             <div className="row justify-content-center">

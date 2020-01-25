@@ -8,7 +8,6 @@ import { withRouter } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import { connect } from 'unistore/react';
 import { store, actions } from '../store';
-import { Row } from 'react-bootstrap';
 
 class ThumbnailHome extends Component {
   // function for category dynamic
@@ -38,7 +37,7 @@ class ThumbnailHome extends Component {
           <h3 style={{ textAlign: 'center', marginTop: '30px' }}>Top List Hot Figure 2020</h3>
         </div>
         <div className="row">
-          <div className="col-md-3 thumbnail-home" style={{ textAlign: 'center' }}>
+          <div className="col-md-3 thumbnail-home" style={{ textAlign: 'center', verticalAlign: 'center' }}>
             <Link to="/category/gundam" onClick={e => this.getSearchCategory('gundam')}>
               <img
                 src={
@@ -54,18 +53,16 @@ class ThumbnailHome extends Component {
                 }}
                 alt="gambarcategory"
               />
-            </Link>
-            <Row>
-              <Link
-                to="/category/gundam"
-                onClick={e => this.getSearchCategory('gundam')}
-                style={{ fontSize: '30px', paddingTop: '15px' }}
-              >
-                Gundam
+            </Link><br />
+            <Link
+              to="/category/gundam"
+              onClick={e => this.getSearchCategory('gundam')}
+              style={{ fontSize: '30px', paddingTop: '15px' }}
+            >
+              Gundam
               </Link>
-            </Row>
           </div>
-          <div className="col-md-3 thumbnail-home" style={{ textAlign: 'center' }}>
+          <div className="col-md-3 thumbnail-home" style={{ textAlign: 'center', verticalAlign: 'center' }}>
             <Link to="/category/digimon" onClick={e => this.getSearchCategory('digimon')}>
               <img
                 src={
@@ -81,18 +78,16 @@ class ThumbnailHome extends Component {
                 }}
                 alt="gambarcategory"
               />
-            </Link>
-            <Row>
-              <Link
-                to="/category/digimon"
-                onClick={e => this.getSearchCategory('digimon')}
-                style={{ fontSize: '30px', paddingTop: '15px' }}
-              >
-                Digimon
+            </Link><br />
+            <Link
+              to="/category/digimon"
+              onClick={e => this.getSearchCategory('digimon')}
+              style={{ fontSize: '30px', paddingTop: '15px' }}
+            >
+              Digimon
               </Link>
-            </Row>
           </div>
-          <div className="col-md-3 thumbnail-home" style={{ textAlign: 'center' }}>
+          <div className="col-md-3 thumbnail-home" style={{ textAlign: 'center', verticalAlign: 'center' }}>
             <Link to="/category/onepiece" onClick={e => this.getSearchCategory('onepiece')}>
               <img
                 src={
@@ -108,18 +103,16 @@ class ThumbnailHome extends Component {
                 }}
                 alt="gambarcategory"
               />
+            </Link><br />
+            <Link
+              to="/category/onepiece"
+              onClick={e => this.getSearchCategory('onepiece')}
+              style={{ fontSize: '30px', paddingTop: '15px' }}
+            >
+              Onepiece
             </Link>
-            <Row>
-              <Link
-                to="/category/onepiece"
-                onClick={e => this.getSearchCategory('onepiece')}
-                style={{ fontSize: '30px', paddingTop: '15px' }}
-              >
-                Onepiece
-            </Link>
-            </Row>
           </div>
-          <div className="col-md-3 thumbnail-home" style={{ textAlign: 'center' }}>
+          <div className="col-md-3 thumbnail-home" style={{ textAlign: 'center', verticalAlign: 'center' }}>
             <Link to="/category/naruto" onClick={e => this.getSearchCategory('naruto')}>
               <img
                 src={'https://hottopic.scene7.com/is/image/HotTopic/11962202_hi?$pdp_hero_standard$'}
@@ -133,16 +126,14 @@ class ThumbnailHome extends Component {
                 }}
                 alt="gambarcategory"
               />
+            </Link><br />
+            <Link
+              to="/category/naruto"
+              onClick={e => this.getSearchCategory('naruto')}
+              style={{ fontSize: '30px', paddingTop: '15px' }}
+            >
+              Naruto
             </Link>
-            <Row>
-              <Link
-                to="/category/naruto"
-                onClick={e => this.getSearchCategory('naruto')}
-                style={{ fontSize: '30px', paddingTop: '15px' }}
-              >
-                Naruto
-            </Link>
-            </Row>
           </div>
         </div>
       </div>

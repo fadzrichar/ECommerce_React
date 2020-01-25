@@ -1,5 +1,6 @@
 .search-products {
-    transition: transform .2s; /* Animation */
+    transition: transform .2s;
+    /* Animation */
     margin: 0 auto;
     transition: 0.3s;
 }
@@ -11,17 +12,12 @@ body {
 .search-products:hover {
     transform: scale(1.1);
 }
-.search-products img:hover{
+
+.search-products img:hover {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .search-products h5 {
     text-decoration: none;
     transition: .2s;
-}
-
-@media(max-width:767px){
-    .search-products img {
-        margin-left: 15%;
-    }
 }

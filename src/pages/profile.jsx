@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { Redirect } from 'react-router-dom';
-import { withRouter } from 'react-router-dom';
+import { withRouter, Redirect } from 'react-router-dom';
 import { connect } from 'unistore/react';
 import { actions } from '../store';
 import Navigasi from '../components/navBars';
@@ -117,13 +116,6 @@ class Profile extends Component {
         </React.Fragment>
       );
     }
-    // return (
-    //   <div>
-    //     <Navigasi {...this.props} />
-    //     <ProfileBody {...this.props} />
-    //     <Footer />
-    //   </div>
-    //   )
   }
 }
 

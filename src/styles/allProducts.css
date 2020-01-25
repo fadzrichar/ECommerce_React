@@ -17,3 +17,9 @@
     text-decoration: none;
     transition: .2s;
 }
+
+@media(max-width:767px) {
+    .slogan {
+        margin-top: 180px !important;
+    }
+}

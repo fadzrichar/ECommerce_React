@@ -39,7 +39,7 @@ class Navigasi extends React.Component {
 				<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></link>
 				<div className="container">
 					<Navbar bg="light" expand="lg" fixed="top">
-						<div className="col-md-3">
+						<div className="col-md-4 text-center">
 							<Navbar.Brand><Link to="/"><img
 								src={logo}
 								width="200px"
@@ -49,10 +49,10 @@ class Navigasi extends React.Component {
 							/></Link>
 							</Navbar.Brand>
 						</div>
-						<div className="col-md-5">
+						<div className="col-md-4">
 							<form onSubmit={e => e.preventDefault()} class="form-inline my-2 my-lg-0">
 								<input class="form-control mr-sm-2"
-									style={{ width: "400px" }}
+									style={{ width: "300px" }}
 									type="search"
 									placeholder="Search Your Hobby's Figure"
 									aria-label="Search"
