@@ -49,7 +49,7 @@ class Cart extends Component {
         </div>
         <div style={{ textAlign: "center", paddingTop: "10px" }}>
           <Button variant="primary" type="submit" style={{ marginBottom: "30px" }} onClick={event => this.goCheckout(event)}>
-            <Link className="underlineHover">Purchasing</Link>
+            <Link className="underlineHover">Checkout</Link>
           </Button>
         </div>
         <Footer />

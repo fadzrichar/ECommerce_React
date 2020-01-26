@@ -14,7 +14,7 @@ class SearchProducts extends Component {
         return (
             <div className="container">
                 <div>
-                    <h1 style={{ textAlign: "center", marginTop: "150px" }}>Result for category  <strong>{this.props.search}</strong></h1>
+                    <h1 style={{ textAlign: "center", marginTop: "180px" }}>Result for category  <strong>{this.props.search}</strong></h1>
                 </div>
                 <div className="row justify-content-center">
                     {this.props.searchProducts.map((data, key) => (

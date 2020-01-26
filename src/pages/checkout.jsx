@@ -3,9 +3,10 @@ import InputDestination from '../components/inputDestination';
 import Checkout from '../components/checkout';
 import Navigasi from '../components/navBars';
 import Footer from '../components/footer';
-import { withRouter } from "react-router-dom";
 import { connect } from "unistore/react";
 import { store, actions } from "../store";
+import { withRouter, Link } from 'react-router-dom';
+import { Button } from "react-bootstrap";
 
 class CheckoutData extends React.Component {
 
@@ -14,6 +15,11 @@ class CheckoutData extends React.Component {
         store.setState({ idCart: idCart })
         this.props.getCheckoutData();
     };
+
+    goHome = () => {
+        alert('Yeay, enjoy your hobbies!');
+        this.props.history.push('/');
+    }
 
     render() {
         const checkoutData = this.props.listCheckoutData.map((data, key) => {
@@ -41,6 +47,11 @@ class CheckoutData extends React.Component {
                             {checkoutData}
                         </div>
                     </div>
+                </div>
+                <div style={{ textAlign: "center", paddingTop: "10px" }}>
+                    <Button variant="primary" type="submit" style={{ marginBottom: "30px" }} onClick={event => this.goHome(event)}>
+                        <Link className="underlineHover">Purchasing</Link>
+                    </Button>
                 </div>
                 < Footer />
             </div>

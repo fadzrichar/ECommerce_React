@@ -6,7 +6,6 @@ import { actions } from "../store";
 class Checkout extends React.Component {
 
     render() {
-
         return (
             <div className="costcheckout" style={{ marginTop: "370px" }}>
                 <div className="row">
@@ -37,6 +36,7 @@ class Checkout extends React.Component {
         );
     }
 }
+
 export default connect(
     "isLogin",
     actions
