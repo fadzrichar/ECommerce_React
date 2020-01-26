@@ -13,6 +13,7 @@ import ProductDetail from '../pages/productDetail';
 import Search from '../pages/search';
 import Category from '../pages/category';
 import Cart from '../pages/cart';
+import CheckoutData from '../pages/checkout';
 
 const MainRoute = () => {
     return (
@@ -29,6 +30,7 @@ const MainRoute = () => {
                     <Route exact path='/searchproducts' component={Search} />
                     <Route exact path="/category/:category" component={Category} />
                     <Route exact path='/cart' component={Cart} />
+                    <Route exact path="/checkout/:id" component={CheckoutData} />
                     <Route component={NotFound} />
                 </Switch>
             </BrowserRouter>

@@ -23,6 +23,11 @@ const initialState = {
   quantity: '',
   listCart: [],
   listTransaction: [],
+  listCheckoutData: [],
+  idCart: '',
+  shippingCityType: "Kabupaten",
+  shippingCityName: "",
+  shippingCourier: "jne",
 };
 
 export const store = createStore(initialState);
@@ -165,10 +170,75 @@ export const actions = (store) => ({
       .then((response) => {
         store.setState({
           listCart: response.data,
+          idCart: response.data[0].cart.id
           // listTransaction:response.data.transaction_detail
         });
         console.log('cek isi response get cart', response);
       })
       .catch((error) => false);
-  }
+  },
+
+  // add destination function for calculate shipping cost
+  addDestination: async (state, event) => {
+    const courier = state.shippingCourier
+    const city_type = state.shippingCityType
+    const city_name = state.shippingCityName
+    const data = {
+      courier: courier,
+      city_type: city_type,
+      city_name: city_name
+    };
+
+    console.warn("cek data", data)
+    const req = {
+      method: "post",
+      url: "https://hobindo.site/transactions/" + state.idCart,
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${localStorage.getItem('token')}`
+      },
+      data: data
+    };
+    const self = store;
+    await axios(req)
+      .then(function (response) {
+        self.setState({
+          listCheckoutData: [response.data],
+          isLoading: false
+        });
+        console.log(response.data)
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  },
+
+  // get checkout data function
+  getCheckoutData: async (state, event) => {
+
+    const req = {
+      method: "get",
+      url: "https://hobindo.site/transactions/" + state.idCart,
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem('token')}`
+      }
+    };
+
+    const self = store;
+    await axios(req)
+      .then(function (response) {
+        self.setState({
+          listCheckoutData: response.data,
+          isLoading: false
+        });
+        console.log(response.data);
+      })
+      .catch(function (error) {
+        self.setState({
+          isLoading: false
+        });
+        console.log(error)
+      })
+    console.warn("checkout", state.listCheckoutData)
+  },
 })
